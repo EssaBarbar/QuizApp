@@ -7,8 +7,8 @@ try {
         if($_POST['endpoint'] == 'postScore') {
 
             include('./databasehandler.php');
-            $user = unserialize($_SESSION['Name']);
-            $score = unserialize($_SESSION['Score']);
+            $user = $_POST['Name'];
+            $score = $_POST['Score'];
             $result = postScore($user, $score);
             echo json_encode($result);  
 

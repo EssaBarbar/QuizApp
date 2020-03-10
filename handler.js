@@ -23,17 +23,19 @@ function makeRequest(url, method, data, callback) {
 
 function postScore(score) {
 
-    var username = document.getElementById("userName").value
-
+    var uName = document.getElementById("userName").value
+    var testScore = score;
 
     let data = new FormData()
-    data.append("Name", username)
-    data.append("Score", score)
+    data.append("Name", uName)
+    data.append("Score", testScore)
     data.append("endpoint", "postScore")
 
 
     makeRequest('./databasereciever.php', 'POST', data, (result) => {
+        console.log(result)
     })
+    
 
 }
 
@@ -61,7 +63,7 @@ function renderHighScores(result) {
         const scoreListItem = document.createElement("li")
         scoreListItem.classList = "scoreListItem"
         scoreListItem.innerHTML = selectedScore.name + " " + selectedScore.score
-        // showScores.append(scoreListItem)
+        showScores.append(scoreListItem)
     }
 
 }
@@ -87,7 +89,7 @@ function checkGuessing() {
     let theGuessedNumber = document.getElementById("guessedNumber").value
     if (theGuessedNumber == theRandomNumber) {
         console.log("WIIIIIN", points)
-        // postScore(points)
+        postScore(points)
 
     } else {
         if (theGuessedNumber > theRandomNumber) {

@@ -4,7 +4,7 @@ function getScore() {
     include_once('./database.php');
     $database = new Database();
 
-    $query = $database->connection->prepare('SELECT * FROM user ORDER BY score DESC LIMIT 10');
+    $query = $database->connection->prepare('SELECT * FROM user ORDER BY cast(score as unsigned) DESC LIMIT 10');
     $query->execute();
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
@@ -19,6 +19,8 @@ function postScore($user, $score){
     
     include_once('./database.php');
     $database = new Database();
+    $testing = $score;
+    $unamn = $user;
     
     
 
@@ -27,10 +29,11 @@ function postScore($user, $score){
         $database->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         $qry = $database->connection->prepare('INSERT INTO user (name, score)
-         VALUES (:name, :score);');
+         VALUES (:namn, :score)');
 
-        $qry->execute(array(':name' => $user, 
-                            ':score' => $score));
+            $qry->execute(array(':namn' => $unamn,
+                                ':score' => $testing));
+        
 
                             
         
