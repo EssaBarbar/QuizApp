@@ -1,3 +1,12 @@
+const TheGameBegin = document.getElementById("startTheGame")
+TheGameBegin && TheGameBegin.addEventListener("click", newGame)
+const guess = document.getElementById("guess")
+guess && guess.addEventListener("click", checkGuessing)
+
+
+
+
+
 function makeRequest(url, method, data, callback) {
     fetch(url, {
         method: method,
@@ -12,10 +21,9 @@ function makeRequest(url, method, data, callback) {
 }
 // document.getElementById("submitBtn").addEventListener("click", postScore()); för eve
 
-function postScore() {
+function postScore(score) {
 
     var username = document.getElementById("userName").value
-    //var lName = document.getElementById("lName").value <--- score
 
 
     let data = new FormData()
@@ -53,9 +61,70 @@ function renderHighScores(result) {
         const scoreListItem = document.createElement("li")
         scoreListItem.classList = "scoreListItem"
         scoreListItem.innerHTML = selectedScore.name + " " + selectedScore.score
-        showScores.append(scoreListItem)
+        // showScores.append(scoreListItem)
     }
 
 }
-
 getHighScores();
+
+let theRandomNumber = Math.floor(Math.random() * 20 + 1)
+let numberOfFails = 0
+let points = 100
+let min = 0
+let max = 20
+
+function newGame() {
+    theRandomNumber = Math.floor(Math.random() * 20 + 1)
+    numberOfFails = 0
+    points = 100
+    min = 0
+    max = 20
+    console.log("theRandomNumber", theRandomNumber)
+
+}
+
+function checkGuessing() {
+    let theGuessedNumber = document.getElementById("guessedNumber").value
+    if (theGuessedNumber == theRandomNumber) {
+        console.log("WIIIIIN", points)
+        // postScore(points)
+
+    } else {
+        if (theGuessedNumber > theRandomNumber) {
+            console.log("wrong number gissa lägre nästa gång")
+        } else {
+            console.log("wrong number gissa högre nästa gång")
+        }
+        numberOfFails++
+        points = points - (numberOfFails * 6)
+
+        if (points <= 0) {
+            console.log("So many tries Gmae over")
+            return
+        }
+        setTimeout(function botTurn() {
+            let botguessing = getRndInteger(min, max)
+            if (botguessing == theRandomNumber) {
+                console.log("botenvinner")
+                return
+            } else {
+                if (botguessing > theRandomNumber) {
+                    max = botguessing
+                } else {
+                    min = botguessing + 1
+                }
+                console.log("boten gissade fel, din tur igen", botguessing)
+            }
+        }, 2000)
+
+        // visa spela om knappen
+
+
+
+    }
+}
+
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
