@@ -123,6 +123,14 @@ function checkGuessing() {
 
 
     function getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
+        return Math.floor(randomG(80) * (max - min)) + min;
     }
+
+}
+function randomG(v) {
+    var r = 0;
+    for (var i = v; i > 0; i--) {
+        r += Math.random();
+    }
+    return r / v;
 }
