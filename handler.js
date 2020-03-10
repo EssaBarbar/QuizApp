@@ -102,29 +102,25 @@ function checkGuessing() {
             console.log("So many tries Gmae over")
             return
         }
-        setTimeout(function botTurn() {
-            let botguessing = getRndInteger(min, max)
-            if (botguessing == theRandomNumber) {
-                console.log("botenvinner")
-                return
+        let botguessing = getRndInteger(min, max)
+        if (botguessing == theRandomNumber) {
+            console.log("botenvinner")
+            return
+        } else {
+            if (botguessing > theRandomNumber) {
+                max = botguessing
             } else {
-                if (botguessing > theRandomNumber) {
-                    max = botguessing
-                } else {
-                    min = botguessing + 1
-                }
-                console.log("boten gissade fel, din tur igen", botguessing)
+                min = botguessing + 1
             }
-        }, 2000)
+            console.log("boten gissade fel, din tur igen", botguessing)
+        }
+
 
         // visa spela om knappen
-
-
-
     }
-}
 
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
 }
