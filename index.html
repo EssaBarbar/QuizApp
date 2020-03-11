@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Chewy|Knewave|Modak|Ultra&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Guess Game</title>
     <script defer src="handler.js"></script>
 </head>
@@ -11,15 +14,44 @@
 
 <body>
 
+<div class="main-content">
+    
+    <div class="main-content-items">
+        <div class="title">Guessing Game</div>
+        <div class="subtitle">Beat the Computer and Guess the Correct Number</div>
+    </div>
+
+    <div class="main-content-items">
+        <div class="subtitle">Write your name here:</div>
+        <input id="playerName" type="text" placeholder="Name"> <br>
     <div>
         <div>Please insert your name here:</div>
         <input id="userName" type="text" placeholder="Name">
         <button id="SaveInDatabse">Play</button>
     </div>
 
+    <div class="main-content-items">
+        <div class="subtitle">Here are some rules to follow:</div> 
+        <ul>
+            <li>Enter a number between 1 and 20</li>
+            <li>Try not to get help from another person</li>
+            <li>If you want to play as two people, write your name together without space. <br> However it will be counted as one win</li>
+        </ul>
+    </div>
+    
+    <div class="main-content-items">
+    
     <Button id="startTheGame">STAAART</Button>
-    <input id="guessedNumber" type="number" placeholder="Number">
+    <input id="guessedNumber" type="number" placeholder="Number"> <br>
     <button id="guess">Guess!!</button>
+
+    </div>
+    
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </body>
 
