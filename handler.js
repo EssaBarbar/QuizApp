@@ -134,3 +134,10 @@ function randomG(v) {
     }
     return r / v;
 }
+
+function SaveInDatabse(id) {
+    document.getElementById(id).style.display = 'block';
+}
+function startTheGame(id) {
+    document.getElementById(id).style.display = 'none';
+}
