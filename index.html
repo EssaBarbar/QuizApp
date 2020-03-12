@@ -22,25 +22,33 @@
     </div>
 
     <div class="main-content-items">
-        <div class="subtitle">Write your name here:</div>
-        <input id="userName" type="text" placeholder="Name"> <br>
-        <button id="SaveInDatabse">Play</button>
+        <div class="subtitle">Skriv ditt namn här:</div>
+        <input id="userName" type="text" placeholder="Namn"> <br>
+        <button class="btn btn-warning" id="SaveInDatabse">Spela</button>
     </div>
 
     <div class="main-content-items">
-        <div class="subtitle">Here are some rules to follow:</div> 
+        <div class="subtitle">Regler Quizzapp:</div> 
         <ul>
-            <li>Enter a number between 1 and 20</li>
-            <li>Try not to get help from another person</li>
-            <li>If you want to play as two people, write your name together without space. <br> However it will be counted as one win</li>
+            <li>Skriv in ditt namn.</li>
+            <li>Innan du startar tilldelas du 100 startpoäng.</li>
+            <li>Du gissar på en siffra mellan 1–20.</li>
+            <li>Antalet gissningar multipliceras med 6, som subtraheras av dina startpoäng. </li>
+            <li>Dina poäng baseras på hur många gissningar det tar att gissa rätt svar.</li>
+            <li>Om dina poäng är lägre än 0, kan du inte spela längre.</li>
+            <li>Om svaret är rätt är tävlingen över.</li>
+            <li>Om svaret är fel, tipsas du med ”högre” eller ”lägre”.</li>
+            <li> Du spelar mot en bot.</li>
+            <li>Topplistan är begränsad till de fem bästa poängen.</li>
         </ul>
     </div>
     
+
     <div class="main-content-items">
     
-    <Button id="startTheGame">STAAART</Button>
-    <input id="guessedNumber" type="number" placeholder="Number"> <br>
-    <button id="guess">Guess!!</button>
+    <Button class="btn btn-success" id="startTheGame">STAAART</Button>
+    <input id="guessedNumber" type="number" placeholder="Nummer"> <br>
+    <button class="btn btn-success" id="guess">Gissa!!</button>
 
     </div>
     
