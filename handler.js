@@ -97,7 +97,6 @@ function checkGuessing() {
         postScore(points)
         TheGameBegin.innerText = "Play again"
         TheGameBegin.style.display = "flex"
-
     } else {
         if (theGuessedNumber > theRandomNumber) {
             higherOrLower.innerText = "Lägre"
@@ -116,6 +115,8 @@ function checkGuessing() {
         let botguessing = getRndInteger(min, max)
         if (botguessing == theRandomNumber) {
             higherOrLower.innerText = "botenvinner"
+            TheGameBegin.innerText = "Play again"
+            TheGameBegin.style.display = "flex"
             return
         } else {
             if (botguessing > theRandomNumber) {
@@ -125,8 +126,6 @@ function checkGuessing() {
             }
             console.log(botguessing)
         }
-
-
     }
 
 
@@ -155,5 +154,6 @@ function SaveInDatabse() {
     }
 }
 function startTheGame(id) {
-    document.getElementById(id).style.display = 'none';
+    document.getElementById("startTheGame").style.display = 'none';
+    document.getElementById("guessedNumber").value = ""
 }
