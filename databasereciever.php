@@ -10,7 +10,7 @@ try {
             $user = $_POST['Name'];
             $score = $_POST['Score'];
             $result = postScore($user, $score);
-            echo json_encode($result);  
+            echo json_encode("Thank you for playing our game");  
 
         } else {
             throw new Exception('Not a valid endpoint', 501);

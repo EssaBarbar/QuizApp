@@ -2,6 +2,9 @@ const TheGameBegin = document.getElementById("startTheGame")
 TheGameBegin && TheGameBegin.addEventListener("click", newGame)
 const guess = document.getElementById("guess")
 guess && guess.addEventListener("click", checkGuessing)
+const showrules = document.getElementById("SaveInDatabse")
+const namefield = document.getElementById("userName")
+const higherOrLower = document.getElementById("popo")
 
 
 
@@ -19,7 +22,6 @@ function makeRequest(url, method, data, callback) {
         console.log("Error: ", err)
     })
 }
-// document.getElementById("submitBtn").addEventListener("click", postScore()); för eve
 
 function postScore(score) {
 
@@ -35,7 +37,7 @@ function postScore(score) {
     makeRequest('./databasereciever.php', 'POST', data, (result) => {
         console.log(result)
     })
-    
+
 
 }
 
@@ -63,6 +65,7 @@ function renderHighScores(result) {
         const scoreListItem = document.createElement("li")
         scoreListItem.classList = "scoreListItem"
         scoreListItem.innerHTML = selectedScore.name + " " + selectedScore.score
+        scoreListItem.style.color = "white"
         showScores.append(scoreListItem)
     }
 
@@ -82,6 +85,8 @@ function newGame() {
     min = 0
     max = 20
     console.log("theRandomNumber", theRandomNumber)
+    TheGameBegin.style.display = "none"
+    namefield.style.display = "none"
 
 }
 
@@ -90,23 +95,27 @@ function checkGuessing() {
     if (theGuessedNumber == theRandomNumber) {
         console.log("WIIIIIN", points)
         postScore(points)
+        TheGameBegin.innerText = "Play again"
+        TheGameBegin.style.display = "flex"
 
     } else {
         if (theGuessedNumber > theRandomNumber) {
-            console.log("wrong number gissa lägre nästa gång")
+            higherOrLower.innerText = "Lägre"
         } else {
-            console.log("wrong number gissa högre nästa gång")
+            higherOrLower.innerText = "Högre"
         }
         numberOfFails++
         points = points - (numberOfFails * 6)
 
         if (points <= 0) {
-            console.log("So many tries Gmae over")
+            higherOrLower.innerText = "So many tries Gmae over"
+            TheGameBegin.innerText = "Play again"
+            TheGameBegin.style.display = "flex"
             return
         }
         let botguessing = getRndInteger(min, max)
         if (botguessing == theRandomNumber) {
-            console.log("botenvinner")
+            higherOrLower.innerText = "botenvinner"
             return
         } else {
             if (botguessing > theRandomNumber) {
@@ -114,11 +123,10 @@ function checkGuessing() {
             } else {
                 min = botguessing + 1
             }
-            console.log("boten gissade fel, din tur igen", botguessing)
+            console.log(botguessing)
         }
 
 
-        // visa spela om knappen
     }
 
 
@@ -135,8 +143,16 @@ function randomG(v) {
     return r / v;
 }
 
-function SaveInDatabse(id) {
-    document.getElementById(id).style.display = 'block';
+let showHide = false
+function SaveInDatabse() {
+    if (showHide == false) {
+        document.getElementById("rules").style.display = 'block';
+        showHide = true
+    } else {
+        document.getElementById("rules").style.display = 'none';
+        showHide = false
+
+    }
 }
 function startTheGame(id) {
     document.getElementById(id).style.display = 'none';
