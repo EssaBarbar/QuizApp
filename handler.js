@@ -156,4 +156,5 @@ function SaveInDatabse() {
 function startTheGame(id) {
     document.getElementById("startTheGame").style.display = 'none';
     document.getElementById("guessedNumber").value = ""
+    document.getElementById("popo").innerHTML = ""
 }
