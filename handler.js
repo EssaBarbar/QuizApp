@@ -93,6 +93,7 @@ function newGame() {
 function checkGuessing() {
     let theGuessedNumber = document.getElementById("guessedNumber").value
     if (theGuessedNumber == theRandomNumber) {
+        higherOrLower.innerText = "Du Vann!" + " " + points + " " + "poäng"
         console.log("WIIIIIN", points)
         postScore(points)
         TheGameBegin.innerText = "Play again"
