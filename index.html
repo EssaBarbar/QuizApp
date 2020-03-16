@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Chewy|Knewave|Modak|Ultra&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Guess Game</title>
+    <script defer src="handler.js"></script>
+</head>
+
+
+<body>
+
+    <div class="main-content">
+
+        <div class="main-content-items">
+            <a href="./highscores.html"><button>Click here to see the score board</button></a>
+            <div class="title">Guessing Game</div>
+            <div class="subtitle">Beat the Computer and Guess the Correct Number</div>
+        </div>
+
+        <div class="main-content-items">
+            <div class="subtitle">Skriv ditt namn här:</div>
+            <input id="userName" type="text" placeholder="Namn"> <br>
+            <button onclick="SaveInDatabse()" class="btn btn-warning" id="SaveInDatabse">See rules</button>
+            <span id="rules" style="display:none">
+
+                <div class="main-content-items">
+                    <div class="subtitle">Regler Quizzapp:</div>
+                    <ul>
+                        <li>Skriv in ditt namn.</li>
+                        <li>Innan du startar tilldelas du 100 startpoäng.</li>
+                        <li>Du gissar på en siffra mellan 1–20.</li>
+                        <li>Antalet gissningar multipliceras med 6, som subtraheras av dina startpoäng. </li>
+                        <li>Dina poäng baseras på hur många gissningar det tar att gissa rätt svar.</li>
+                        <li>Om dina poäng är lägre än 0, kan du inte spela längre.</li>
+                        <li>Om svaret är rätt är tävlingen över.</li>
+                        <li>Om svaret är fel, tipsas du med ”högre” eller ”lägre”.</li>
+                        <li> Du spelar mot en bot.</li>
+                        <li>Topplistan är begränsad till de fem bästa poängen.</li>
+                    </ul>
+                </div>
+        </div>
+
+
+        <div class="main-content-items">
+
+            <Button onclick="startTheGame('answer')" class="btn btn-success" id="startTheGame">Start</Button> <br>
+            <h5 class="subtitle">skriva ett number</h5>
+            <input id="guessedNumber" type="number" placeholder="Nummer"> <br>
+            <button class="btn btn-success" id="guess">Gissa!!</button>
+            <div id="popo"></div>
+
+        </div>
+
+    </div>
+    <!-- // FUUUUCCCCKKKK bootstrap -->
+    <!-- following is Bootstrap CDN additionals which has Jquery properties in it -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
