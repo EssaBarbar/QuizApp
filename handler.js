@@ -121,7 +121,7 @@ function checkGuessing() {
 
 
     function getRndInteger(min, max) {
-        return Math.floor(randomG(80) * (max - min)) + min;
+        return Math.floor(randomG(70) * (max - min)) + min;
     }
 
 }
