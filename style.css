@@ -34,3 +34,27 @@ body{
 #popo {
     margin-top: 2em;
 }
+
+@media screen and (max-width: 400px) {
+    body {
+        background-color: rgb(14, 61, 114);
+        box-shadow: 1px 2px 20px 10px rgb(142, 166, 193) inset;
+        height: 100vh;
+    }
+    .main-content {
+        color: white;
+    }
+    .title {
+        text-align: center;
+    }
+    .btn-warning {
+        background-color: rgb(70, 68, 74);
+        border-color: black;
+        color: white;
+    }
+    .btn-success {
+        background-color: rgb(95, 122, 118);
+        border-color: black;
+        color: white;
+    }
+}
