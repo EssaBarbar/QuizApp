@@ -19,36 +19,36 @@
     <div class="main-content">
 
         <div class="main-content-items">
-            <a href="./highscores.html"><button>Click here to see the score board</button></a>
-            <a href="./index.html"><button>New Player</button></a>
+           
             <div class="title">Guessing Game</div>
             <div class="subtitle">Beat the Computer and Guess the Correct Number</div>
+            <div class="subtitle"><a href="./highscores.html"><button class="btn btn-warning" >Score Board</button></a></div>
+            <div class="subtitle"><a href="./index.html"><button class="btn btn-warning">New- Player</button></a></div>
+            
         </div>
 
         <div class="main-content-items">
             <div class="subtitle">Skriv ditt namn här:</div>
             <input id="userName" type="text" placeholder="Namn"> <br>
             <button onclick="SaveInDatabse()" class="btn btn-warning" id="SaveInDatabse">See rules</button>
-            <span id="rules" style="display:none">
-
-                <div class="main-content-items">
-                    <div class="subtitle">Regler Quizzapp:</div>
-                    <ul>
-                        <li>Skriv in ditt namn.</li>
-                        <li>Innan du startar tilldelas du 100 startpoäng.</li>
-                        <li>Du gissar på en siffra mellan 1–20.</li>
-                        <li>Antalet gissningar multipliceras med 6, som subtraheras av dina startpoäng. </li>
-                        <li>Dina poäng baseras på hur många gissningar det tar att gissa rätt svar.</li>
-                        <li>Om dina poäng är lägre än 0, kan du inte spela längre.</li>
-                        <li>Om svaret är rätt är tävlingen över.</li>
-                        <li>Om svaret är fel, tipsas du med ”högre” eller ”lägre”.</li>
-                        <li> Du spelar mot en bot.</li>
-                        <li>Topplistan är begränsad till de fem bästa poängen.</li>
-                    </ul>
-                </div>
         </div>
 
-
+        <div class="main-content-items" id="rules" style="display:none">
+            <div class="subtitle" >Regler Quizzapp:</div>
+            <ul>
+                <li>Skriv in ditt namn.</li>
+                <li>Innan du startar tilldelas du 100 startpoäng.</li>
+                <li>Du gissar på en siffra mellan 1–20.</li>
+                <li>Antalet gissningar multipliceras med 6, som subtraheras av dina startpoäng. </li>
+                <li>Dina poäng baseras på hur många gissningar det tar att gissa rätt svar.</li>
+                <li>Om dina poäng är lägre än 0, kan du inte spela längre.</li>
+                <li>Om svaret är rätt är tävlingen över.</li>
+                <li>Om svaret är fel, tipsas du med ”högre” eller ”lägre”.</li>
+                <li> Du spelar mot en bot.</li>
+                <li>Topplistan är begränsad till de fem bästa poängen.</li>
+            </ul>
+        </div>
+      
         <div class="main-content-items">
 
             <Button onclick="startTheGame('answer')" class="btn btn-success" id="startTheGame">Start</Button> <br>
@@ -60,7 +60,7 @@
         </div>
 
     </div>
-    <!-- // FUUUUCCCCKKKK bootstrap -->
+
     <!-- following is Bootstrap CDN additionals which has Jquery properties in it -->
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
