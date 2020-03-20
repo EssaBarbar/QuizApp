@@ -19,12 +19,13 @@
     <div class="main-content">
 
         <div class="main-content-items">
-           
+
             <div class="title">Guessing Game</div>
             <div class="subtitle">Beat the Computer and Guess the Correct Number</div>
-            <div class="subtitle"><a href="./highscores.html"><button class="btn btn-warning" >Score Board</button></a></div>
-            <div class="subtitle"><a href="./index.html"><button class="btn btn-warning">New- Player</button></a></div>
-            
+            <div class="media">
+                <div class="subtitle"><a href="./highscores.html"><button class="btn btn-warning">ScoreBoard</button></a></div>
+                <div class="subtitle"><a href="./index.html"><button class="btn btn-warning">New- Player</button></a></div>
+            </div>
         </div>
 
         <div class="main-content-items">
@@ -34,7 +35,7 @@
         </div>
 
         <div class="main-content-items" id="rules" style="display:none">
-            <div class="subtitle" >Regler Quizzapp:</div>
+            <div class="rulesSubtitle">Regler Quizzapp:</div>
             <ul>
                 <li>Skriv in ditt namn.</li>
                 <li>Innan du startar tilldelas du 100 startpoäng.</li>
@@ -48,7 +49,7 @@
                 <li>Topplistan är begränsad till de fem bästa poängen.</li>
             </ul>
         </div>
-      
+
         <div class="main-content-items">
 
             <Button onclick="startTheGame('answer')" class="btn btn-success" id="startTheGame">Start</Button> <br>
