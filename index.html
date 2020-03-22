@@ -21,17 +21,17 @@
         <div class="main-content-items">
 
             <div class="title">Guessing Game</div>
-            <div class="subtitle">Beat the Computer and Guess the Correct Number</div>
+            <div class="subtitle">Slå datorn igenom att gissa rätt nummer</div>
             <div class="media">
-                <div class="subtitle"><a href="./highscores.html"><button class="btn btn-warning">ScoreBoard</button></a></div>
-                <div class="subtitle"><a href="./index.html"><button class="btn btn-warning">New- Player</button></a></div>
+                <div class="subtitle"><a href="./highscores.html"><button class="btn btn-warning">Poängtavla</button></a></div>
+                <div class="subtitle"><a href="./index.html"><button class="btn btn-warning">Ny Spelare</button></a></div>
             </div>
         </div>
 
         <div class="main-content-items">
             <div class="subtitle">Skriv ditt namn här:</div>
             <input id="userName" type="text" placeholder="Namn"> <br>
-            <button onclick="SaveInDatabse()" class="btn btn-warning" id="SaveInDatabse">See rules</button>
+            <button onclick="SaveInDatabse()" class="btn btn-warning" id="SaveInDatabse">Se regler</button>
         </div>
 
         <div class="main-content-items" id="rules" style="display:none">
@@ -53,7 +53,7 @@
         <div class="main-content-items">
 
             <Button onclick="startTheGame('answer')" class="btn btn-success" id="startTheGame">Start</Button> <br>
-            <h5 class="subtitle">skriva ett number</h5>
+            <h5 class="subtitle">Skriv ett number</h5>
             <input id="guessedNumber" type="number" placeholder="Nummer"> <br>
             <button class="btn btn-success" id="guess">Gissa!!</button>
             <div id="popo"></div>

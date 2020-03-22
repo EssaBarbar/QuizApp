@@ -96,7 +96,7 @@ function checkGuessing() {
         higherOrLower.innerText = "Du Vann!" + " " + points + " " + "poäng"
         console.log("WIIIIIN", points)
         postScore(points)
-        TheGameBegin.innerText = "Play again"
+        TheGameBegin.innerText = "Spela igen"
         TheGameBegin.style.display = "flex"
     } else {
         if (theGuessedNumber > theRandomNumber) {
@@ -108,15 +108,15 @@ function checkGuessing() {
         points = points - (numberOfFails * 6)
 
         if (points <= 0) {
-            higherOrLower.innerText = "So many tries Gmae over"
-            TheGameBegin.innerText = "Play again"
+            higherOrLower.innerText = "För många gissningar, spelet är över"
+            TheGameBegin.innerText = "Spela igen"
             TheGameBegin.style.display = "flex"
             return
         }
         let botguessing = getRndInteger(min, max)
         if (botguessing == theRandomNumber) {
-            higherOrLower.innerText = "botenvinner"
-            TheGameBegin.innerText = "Play again"
+            higherOrLower.innerText = "Boten vinner"
+            TheGameBegin.innerText = "Spela igen"
             TheGameBegin.style.display = "flex"
             return
         } else {
