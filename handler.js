@@ -118,58 +118,61 @@ function newGame() {
 }
 
 function checkGuessing() {
-    // function emptyTheGuessedResult() {
-    //     higherOrLower.innerText = ""
-    // }
+    higherOrLower.innerText = ""
+    guess.innerText = "Vänta.."
+    setTimeout(checkGuessingAfterTimeout, 500)
 
-    let theGuessedNumber = document.getElementById("guessedNumber").value
-    if (theGuessedNumber) {
-        if (theGuessedNumber == theRandomNumber) {
-            higherOrLower.innerText = "Du Vann!" + " " + points + " " + "poäng"
-            console.log("WIIIIIN", points)
-            postScore(points)
-            TheGameBegin.innerText = "Spela igen"
-            TheGameBegin.style.display = "flex"
-        } else {
-            higherOrLower.innerText = "", 1000
-            if (theGuessedNumber > theRandomNumber) {
-                higherOrLower.innerText = "Lägre"
-            } else {
-                higherOrLower.innerText = "Högre", 1000
-            }
-            numberOfFails++
-            points = points - (numberOfFails * 6)
-
-            if (points <= 0) {
-                higherOrLower.innerText = "För många gissningar, spelet är över"
+    function checkGuessingAfterTimeout() {
+        guess.innerText = "Gissa!!"
+        let theGuessedNumber = document.getElementById("guessedNumber").value
+        if (theGuessedNumber) {
+            if (theGuessedNumber == theRandomNumber) {
+                higherOrLower.innerText = "Du Vann!" + " " + points + " " + "poäng"
+                console.log("WIIIIIN", points)
+                postScore(points)
                 TheGameBegin.innerText = "Spela igen"
                 TheGameBegin.style.display = "flex"
-                return
-            }
-            let botguessing = getRndInteger(min, max)
-            if (botguessing == theRandomNumber) {
-                higherOrLower.innerText = "HögBoten vinner"
-                TheGameBegin.innerText = "Spela igen"
-                TheGameBegin.style.display = "flex"
-                return
             } else {
-                if (botguessing > theRandomNumber) {
-                    max = botguessing
+                higherOrLower.innerText = "", 1000
+                if (theGuessedNumber > theRandomNumber) {
+                    higherOrLower.innerText = "Lägre"
                 } else {
-                    min = botguessing + 1
+                    higherOrLower.innerText = "Högre", 1000
                 }
-                console.log(botguessing)
+                numberOfFails++
+                points = points - (numberOfFails * 6)
+
+                if (points <= 0) {
+                    higherOrLower.innerText = "För många gissningar, spelet är över"
+                    TheGameBegin.innerText = "Spela igen"
+                    TheGameBegin.style.display = "flex"
+                    return
+                }
+                let botguessing = getRndInteger(min, max)
+                if (botguessing == theRandomNumber) {
+                    higherOrLower.innerText = "Boten vinner"
+                    TheGameBegin.innerText = "Spela igen"
+                    TheGameBegin.style.display = "flex"
+                    return
+                } else {
+                    if (botguessing > theRandomNumber) {
+                        max = botguessing
+                    } else {
+                        min = botguessing + 1
+                    }
+                    console.log(botguessing)
+                }
             }
+        } else {
+            alert("Var vänlig fyll i ett nummer")
         }
-    } else {
-        alert("Var vänlig fyll i ett nummer")
+
+
+        function getRndInteger(min, max) {
+            return Math.floor(randomG(70) * (max - min)) + min;
+        }
+
     }
-
-
-    function getRndInteger(min, max) {
-        return Math.floor(randomG(70) * (max - min)) + min;
-    }
-
 }
 function randomG(v) {
     var r = 0;
