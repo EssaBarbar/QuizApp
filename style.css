@@ -43,6 +43,12 @@ body{
 .media {
     justify-content: space-around;
 }
+#userName {
+    text-align: center;
+}
+#guessedNumber {
+    text-align: center;
+}
 
 
 

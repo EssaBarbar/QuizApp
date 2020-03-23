@@ -23,8 +23,11 @@
             <div class="title">Guessing Game</div>
             <div class="subtitle">Slå datorn igenom att gissa rätt nummer</div>
             <div class="media">
-                <div class="subtitle"><a href="./highscores.html"><button class="btn btn-warning">Poängtavla</button></a></div>
-                <div class="subtitle"><a href="./index.html"><button class="btn btn-warning">Ny Spelare</button></a></div>
+                <div class="subtitle"><a href="./highscores.html"><button
+                            class="btn btn-warning">Poängtavla</button></a></div>
+                <div class="subtitle"><button id="newPlayer" class="btn btn-warning">Ny
+                        Spelare</button>
+                </div>
             </div>
         </div>
 
@@ -52,8 +55,8 @@
 
         <div class="main-content-items">
 
-            <Button onclick="startTheGame('answer')" class="btn btn-success" id="startTheGame">Start</Button> <br>
-            <h5 class="subtitle">Skriv ett number</h5>
+            <Button class="btn btn-success" id="startTheGame">Start</Button> <br>
+            <h5 class="subtitle">Skriv ett nummer</h5>
             <input id="guessedNumber" type="number" placeholder="Nummer"> <br>
             <button class="btn btn-success" id="guess">Gissa!!</button>
             <div id="popo"></div>
