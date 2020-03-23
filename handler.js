@@ -18,8 +18,6 @@ function updateStorage() {
     sessionStorage.setItem("userFound", namefield.value)
 }
 function init() {
-    console.log(typeof sessionStorage.getItem("userFound"))
-    console.log(sessionStorage.getItem("userFound"))
     if (sessionStorage.getItem("userFound") == null) {
         alert("Please insert your name to play a new game")
     } else if (sessionStorage.getItem("userFound") == "empty") {
@@ -68,7 +66,6 @@ function postScore(score) {
 function getHighScores() {
 
     makeRequest('./databasereciever.php?endpoint=getScore', 'GET', null, (result) => {
-        console.log(result)
         if (result.status == 404) {
         } else {
             renderHighScores(result);
