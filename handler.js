@@ -10,17 +10,6 @@ const namefield = document.getElementById("userName")
 namefield && namefield.addEventListener("change", updateStorage)
 window.onload = init
 
-let seconds = 6;
-var countdown = setInterval(function () {
-    seconds--;
-    document.getElementById("countdown").textContent = seconds;
-    if (seconds <= 0) {
-        alert("Time is out")
-        clearInterval(countdown);
-    }
-}, 1000);
-
-
 
 function newPlayerFunc() {
     sessionStorage.setItem("userFound", "empty")
@@ -127,6 +116,15 @@ function newGame() {
 }
 
 function checkGuessing() {
+    let seconds = 6;
+    let countdown = setInterval(function () {
+        seconds--;
+        document.getElementById("countdown").textContent = seconds;
+        if (seconds <= 0) {
+            alert("Time is out")
+            clearInterval(countdown);
+        }
+    }, 1000);
     higherOrLower.innerText = ""
     guess.innerText = "Vänta.."
     setTimeout(checkGuessingAfterTimeout, 500)
