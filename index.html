@@ -32,7 +32,7 @@
         </div>
 
         <div class="main-content-items">
-            <div class="subtitle">Skriv ditt namn här:</div>
+            <div id="nameTxt" class="subtitle">Skriv ditt namn här:</div>
             <input id="userName" type="text" placeholder="Namn"> <br>
             <button onclick="SaveInDatabse()" class="btn btn-warning" id="SaveInDatabse">Se regler</button>
         </div>
@@ -48,8 +48,9 @@
                 <li>Om dina poäng är lägre än 0, kan du inte spela längre.</li>
                 <li>Om svaret är rätt är tävlingen över.</li>
                 <li>Om svaret är fel, tipsas du med ”högre” eller ”lägre”.</li>
-                <li> Du spelar mot en bot.</li>
+                <li>Du spelar mot en bot.</li>
                 <li>Topplistan är begränsad till de fem bästa poängen.</li>
+                <li>Du måste gissa inom 8 sekunder efter du har startat spelet samt efter varje ny gissning.</li>
             </ul>
         </div>
 

@@ -8,6 +8,9 @@ const newPlayer = document.getElementById("newPlayer")
 newPlayer && newPlayer.addEventListener("click", newPlayerFunc)
 const namefield = document.getElementById("userName")
 namefield && namefield.addEventListener("change", updateStorage)
+
+const nameText = document.getElementById("nameTxt")
+
 window.onload = init
 
 
@@ -27,6 +30,7 @@ function init() {
     else {
         TheGameBegin.style.display = "none"
         namefield.style.display = "none"
+        nameText.style.display = "none"
     }
 }
 
@@ -130,6 +134,7 @@ function setResetInterval(bool) {
     } else {
         clearInterval(countdown);
     }
+    startTheGame()
 }
 
 function checkGuessing() {
@@ -150,6 +155,7 @@ function checkGuessing() {
                 postScore(points)
                 TheGameBegin.innerText = "Spela igen"
                 TheGameBegin.style.display = "flex"
+                TheGameBegin.style.alignSelf = "center"
             } else {
                 higherOrLower.innerText = "", 1000
                 if (theGuessedNumber > theRandomNumber) {
@@ -165,6 +171,7 @@ function checkGuessing() {
                     higherOrLower.innerText = "För många gissningar, spelet är över"
                     TheGameBegin.innerText = "Spela igen"
                     TheGameBegin.style.display = "flex"
+                    TheGameBegin.style.alignSelf = "center"
                     return
                 }
                 let botguessing = getRndInteger(min, max)
@@ -173,6 +180,7 @@ function checkGuessing() {
                     higherOrLower.innerText = "Boten vinner"
                     TheGameBegin.innerText = "Spela igen"
                     TheGameBegin.style.display = "flex"
+                    TheGameBegin.style.alignSelf = "center"
                     return
                 } else {
                     if (botguessing > theRandomNumber) {
