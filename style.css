@@ -8,13 +8,14 @@ body{
     color: yellow;
     display: flex;
     flex-direction: column;
-    align-items: center;   
+    align-items: center;
 }
 
 .main-content-items {
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+    padding-right: 5px;
 }
 
 .title {
@@ -31,6 +32,61 @@ body{
     align-self: center;
     margin-bottom: 10px;
 }
+.rulesSubtitle {
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    /* align-self: center; */
+    margin-bottom: 10px;
+    margin-left: 22px;
+}
+.media {
+    justify-content: space-around;
+}
+#userName {
+    text-align: center;
+}
+#guessedNumber {
+    text-align: center;
+}
+
+
+
 #popo {
     margin-top: 2em;
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        background-color: rgb(14, 61, 114);
+        height: 100vh;
+    }
+    .main-content {
+        color: white;
+    }
+    .title {
+        text-align: center;
+    }
+    .btn-warning {
+        background-color: rgb(172, 45, 36);
+        border-color: white;
+        color: white;
+    }
+    .btn-success {
+        background-color: #43f34a;
+        border-color: black;
+        color: #130c0c;
+        font-weight: bold;
+    }
+    #guess.btn.btn-success {
+        background-color: #43f34a;
+        border-color: black;
+        color: #130c0c;
+        font-weight: bold;
+    }
+    #SaveInDatabse.btn.btn-warning {
+        background-color: rgb(172, 45, 36);
+        border-color: white;
+        color: white;
+    }
 }
