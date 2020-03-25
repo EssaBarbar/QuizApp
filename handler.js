@@ -20,7 +20,6 @@ function updateStorage() {
 }
 function init() {
     if (sessionStorage.getItem("userFound") == null) {
-        alert("Please insert your name to play a new game")
     } else if (sessionStorage.getItem("userFound") == "empty") {
         TheGameBegin.style.display = "block"
         namefield.style.display = "block"
@@ -92,6 +91,7 @@ function renderHighScores(result) {
     }
 
 }
+let countdown
 getHighScores();
 
 let theRandomNumber = Math.floor(Math.random() * 20 + 1)
@@ -112,19 +112,29 @@ function newGame() {
         console.log("theRandomNumber", theRandomNumber)
         TheGameBegin.style.display = "none"
         namefield.style.display = "none"
+        setResetInterval(true)
+
+    }
+}
+function setResetInterval(bool) {
+    if (bool) {
+        let seconds = 8;
+        countdown = setInterval(function () {
+            seconds--;
+            document.getElementById("countdown").textContent = seconds;
+            if (seconds <= 0) {
+                alert("Time is out")
+                clearInterval(countdown);
+            }
+        }, 1000);
+    } else {
+        clearInterval(countdown);
     }
 }
 
 function checkGuessing() {
-    let seconds = 6;
-    let countdown = setInterval(function () {
-        seconds--;
-        document.getElementById("countdown").textContent = seconds;
-        if (seconds <= 0) {
-            alert("Time is out")
-            clearInterval(countdown);
-        }
-    }, 1000);
+    setResetInterval(false)
+    setResetInterval(true)
     higherOrLower.innerText = ""
     guess.innerText = "Vänta.."
     setTimeout(checkGuessingAfterTimeout, 500)
@@ -136,6 +146,7 @@ function checkGuessing() {
             if (theGuessedNumber == theRandomNumber) {
                 higherOrLower.innerText = "Du Vann!" + " " + points + " " + "poäng"
                 console.log("WIIIIIN", points)
+                setResetInterval(false)
                 postScore(points)
                 TheGameBegin.innerText = "Spela igen"
                 TheGameBegin.style.display = "flex"
@@ -150,6 +161,7 @@ function checkGuessing() {
                 points = points - (numberOfFails * 6)
 
                 if (points <= 0) {
+                    setResetInterval(false)
                     higherOrLower.innerText = "För många gissningar, spelet är över"
                     TheGameBegin.innerText = "Spela igen"
                     TheGameBegin.style.display = "flex"
@@ -157,6 +169,7 @@ function checkGuessing() {
                 }
                 let botguessing = getRndInteger(min, max)
                 if (botguessing == theRandomNumber) {
+                    setResetInterval(false)
                     higherOrLower.innerText = "Boten vinner"
                     TheGameBegin.innerText = "Spela igen"
                     TheGameBegin.style.display = "flex"
