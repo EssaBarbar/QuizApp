@@ -119,6 +119,7 @@ function newGame() {
         setResetInterval(true)
 
     }
+    startTheGame()
 }
 function setResetInterval(bool) {
     if (bool) {
