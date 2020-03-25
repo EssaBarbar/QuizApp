@@ -149,6 +149,7 @@ function checkGuessing() {
                 setResetInterval(false)
                 postScore(points)
                 TheGameBegin.innerText = "Spela igen"
+                TheGameBegin.style.justifyContent = "center"
                 TheGameBegin.style.display = "flex"
             } else {
                 higherOrLower.innerText = "", 1000
@@ -164,6 +165,7 @@ function checkGuessing() {
                     setResetInterval(false)
                     higherOrLower.innerText = "För många gissningar, spelet är över"
                     TheGameBegin.innerText = "Spela igen"
+                    TheGameBegin.style.justifyContent = "center"
                     TheGameBegin.style.display = "flex"
                     return
                 }
@@ -172,6 +174,7 @@ function checkGuessing() {
                     setResetInterval(false)
                     higherOrLower.innerText = "Boten vinner"
                     TheGameBegin.innerText = "Spela igen"
+                    TheGameBegin.style.justifyContent = "center"
                     TheGameBegin.style.display = "flex"
                     return
                 } else {
