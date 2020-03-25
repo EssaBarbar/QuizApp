@@ -9,6 +9,7 @@ newPlayer && newPlayer.addEventListener("click", newPlayerFunc)
 const namefield = document.getElementById("userName")
 namefield && namefield.addEventListener("change", updateStorage)
 window.onload = init
+const nametext = document.getElementById("nameTxt");
 
 
 function newPlayerFunc() {
@@ -23,10 +24,12 @@ function init() {
     } else if (sessionStorage.getItem("userFound") == "empty") {
         TheGameBegin.style.display = "block"
         namefield.style.display = "block"
+        nametext.style.display = "block"
     }
     else {
         TheGameBegin.style.display = "none"
         namefield.style.display = "none"
+        nametext.style.display = "none"
     }
 }
 
@@ -112,6 +115,7 @@ function newGame() {
         console.log("theRandomNumber", theRandomNumber)
         TheGameBegin.style.display = "none"
         namefield.style.display = "none"
+        nametext.style.display = "none"
         setResetInterval(true)
 
     }
