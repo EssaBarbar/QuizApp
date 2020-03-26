@@ -8,8 +8,8 @@ const newPlayer = document.getElementById("newPlayer")
 newPlayer && newPlayer.addEventListener("click", newPlayerFunc)
 const namefield = document.getElementById("userName")
 namefield && namefield.addEventListener("change", updateStorage)
-window.onload = init
 const nametext = document.getElementById("nameTxt");
+window.onload = init
 
 
 function newPlayerFunc() {
@@ -129,6 +129,7 @@ function setResetInterval(bool) {
             document.getElementById("countdown").textContent = seconds;
             if (seconds <= 0) {
                 alert("Time is out")
+                location.reload()
                 clearInterval(countdown);
             }
         }, 1000);
