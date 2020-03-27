@@ -151,6 +151,10 @@ function checkGuessing() {
         if (theGuessedNumber) {
             if (theGuessedNumber == theRandomNumber) {
                 higherOrLower.innerText = "Du Vann!" + " " + points + " " + "poäng"
+                setTimeout(goToCeleb, 2000)
+                function goToCeleb() {
+                    location.href = "celeb.html";
+                }
                 console.log("WIIIIIN", points)
                 setResetInterval(false)
                 postScore(points)
