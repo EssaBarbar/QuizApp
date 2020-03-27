@@ -8,4 +8,4 @@ Regler QuizApp
 • Om svaret är rätt är tävlingen över.
 • Om svaret är fel, tipsas du med ”högre” eller ”lägre”.
 • Du spelar mot en bot.
-• Topplistan är begränsad till de fem bästa poängen.
+• Topplistan är begränsad till de tio bästa poängen.
